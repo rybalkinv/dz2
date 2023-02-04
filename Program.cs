@@ -15,10 +15,18 @@ switch (programm)
 case 1:
 //1. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
  
-Random random = new Random();
-int min = 100;
-int max = 999;
-int number = random.Next(min, max + 1);
+int number = ReadInt("Введите трехзначное число: ");
+int amount = number.ToString().Length;
+
+if (amount < 3 || amount > 3)
+{
+ Console.WriteLine("Вы ввели не трехзначное число");
+ break;
+}
+else
+{
+ Console.WriteLine(number);
+}
 Console.WriteLine(number);
 int a = number / 10 % 10;
 Console.WriteLine(a);
